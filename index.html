@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Infomentum Newsletter Editor</title>
+        <link rel="stylesheet" href="//unpkg.com/grapesjs@0.10.7/dist/css/grapes.min.css">
+        <link rel="stylesheet" href="./style/material.css">
+        <link rel="stylesheet" href="./style/material.css">
+        <link rel="stylesheet" href="./style/tooltip.css">
+        <link rel="stylesheet" href="./style/toastr.min.css">
+        <link rel="stylesheet" href="./dist/grapesjs-preset-newsletter.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//unpkg.com/grapesjs@0.10.7/dist/grapes.min.js"></script>
+        <script src="./dist/grapesjs-preset-newsletter.min.js"></script>
+        <script src="./style/toastr.min.js"></script>
+        <script src="./style/ajaxable.min.js"></script>
+    </head>
+    <style>
+        body, html{
+            height: 100%;
+            margin: 0;
+        }
+        .nl-link {
+            color: inherit;
+        }
+        .info-link {
+            text-decoration: none;
+        }
+        #info-cont {
+            line-height: 17px;
+        }
+        .grapesjs-logo {
+            display: block;
+            height: 90px;
+            margin: 0 auto;
+            width: 90px;
+        }
+        .grapesjs-logo path{
+            stroke: #eee !important;
+            stroke-width: 8 !important;
+        }
+        #toast-container {
+            font-size: 13px;
+            font-weight: lighter;
+        }
+        #toast-container > div, #toast-container > div:hover{
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            font-family: Helvetica, sans-serif;
+        }
+        #toast-container > div{
+            opacity: 0.95;
+        }        
+    </style>
+    <body>
+        <div id="gjs" style="height:0px; overflow:hidden">
+            
+            <table id="bodyTable">
+                <!-- 1 BLOCK -->
+                <tr>
+                    <td>
+                        <table class="sup-header inner-table">
+                            <tr>
+                                <td class="align-right view-in-browser">
+                                    <a href="" class="view-in-browser--link">View this email in your browser</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 2 BLOCK -->
+                <tr>
+                    <td>
+                        <table class="middle-header inner-table">
+                            <tr>
+                                <td class="middle-header--td-left">
+                                    <img height="67" 
+                                        src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/infomentum_logo.png"
+                                        class="middle-header--logo"
+                                        width="252" />
+                                </td>
+                                <td class="middle-header--td-right">
+                                    <img height="30" 
+                                        src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/oracle-logo.png" 
+                                        class="middle-header-oracle"
+                                        width="210" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 3 BLOCK-->
+                <tr>
+                    <td class="gradient-bg">
+                        <table class="lower-header inner-table">
+                            <tr class="lower-header-row">
+                                <td class="lower-header--cell">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span>Directors' strategy update for MONTH</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr class="lower-header-row">
+                                <td class="lower-header--cell">
+                                    <p class="lower-header--p">I just
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque enim libero. Suspendisse eu pulvinar massa, in venenatis nibh. Aliquam maximus sapien sit amet eleifend pellentesque. Nunc varius consequat elit et tincidunt. Mauris nec magna ultricies ipsum aliquet lobortis. Sed eget pretium mauris. Vestibulum nulla mauris, tincidunt et diam nec, blandit porta purus.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="white-bg">
+                        <table class="sup-content inner-table">
+                            <tr>
+                                <td class="sup-content--td">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span>Client updates</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="client-updates">
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img alt="Motability"
+                                                height="28"
+                                                src="//cdn2.hubspot.net/hubfs/2612720/Motability.jpg"
+                                                class="client-updates--logo-img"
+                                                title="Motability" vspace="0"
+                                                width="140" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Anousha's announcements from Motability</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img alt="BAE Hawk" 
+                                                    height="59" 
+                                                    hspace="0" 
+                                                    src="//cdn2.hubspot.net/hubfs/2612720/BAE%20Hawk.png"
+                                                    class="client-updates--logo-img"
+                                                    title="BAE Hawk" 
+                                                    vspace="0" 
+                                                    width="150" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Andrew's updates from BAE Hawk</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img align="none" 
+                                                    alt="PT" 
+                                                    border="0" 
+                                                    height="80" 
+                                                    hspace="0" 
+                                                    src="//cdn2.hubspot.net/hubfs/2612720/1024px-The_Prince's_Trust.jpg"
+                                                    class="client-updates--logo-img"
+                                                    title="PT" 
+                                                    vspace="0" 
+                                                    width="80" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Giulia's news from Prince's Trust</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img align="none" 
+                                                    alt="PPL" 
+                                                    border="0" 
+                                                    height="100" 
+                                                    hspace="0" 
+                                                    src="//cdn2.hubspot.net/hubfs/2612720/PPL_Large%20200X200.jpg"
+                                                    class="client-updates--logo-img"
+                                                    title="PPL" 
+                                                    vspace="0" 
+                                                    width="100" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Vivi's intel from PPL</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img align="none" 
+                                                    alt="IQPC" 
+                                                    border="0" 
+                                                    height="100" 
+                                                    hspace="0" 
+                                                    src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/IQPC_acronym_only.png" 
+                                                    class="client-updates--logo-img"
+                                                    title="IQPC" 
+                                                    vspace="0" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Sadaqa's snapshot from IQPC</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="client-updates--table">
+                                        <tr class="client-updates--row">
+                                            <td class="client-updates--logo-cell">
+                                                <img align="none" 
+                                                    alt="BAE Systems" 
+                                                    border="0" 
+                                                    height="59" 
+                                                    hspace="0" 
+                                                    src="//cdn2.hubspot.net/hubfs/2612720/BAE%20Systems.jpg"
+                                                    class="client-updates--logo-img"
+                                                    title="BAE Systems" 
+                                                    vspace="0" />
+                                            </td>
+                                            <td class="client-updates--description">
+                                                <h2 class="client-updates--title">Nelena's info from BAE Systems</h2>
+                                                <p class="client-updates--p">Insert text here</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="gray-bg">
+                        <table class="mollys-corner inner-table">
+                            <tr class="mollys-corner--row">
+                                <td class="mollys-corner--cell">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span>Molly's team corner</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr class="mollys-corner--row">
+                                <td class="mollys-corner--cell">
+                                    <div>
+                                        <h2 class="mollys-corner--title">Staff</h2>
+                                        <p class="mollys-corner--p">Insert text here</p>
+                                    </div>
+                                    <div>
+                                        <h2 class="mollys-corner--title">Training</h2>
+                                        <p class="mollys-corner--p">Insert text here</p>
+                                    </div>
+                                    <div>
+                                        <h2 class="mollys-corner--title">Kudos update</h2>
+                                        <p class="mollys-corner--p">Insert text here</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="gray-bg">
+                        <table class="paulina-marketing inner-table">
+                            <tr class="paulina-marketing--row">
+                                <td class="paulina-marketing--cell">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span>Paulina's marketing mix</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr class="paulina-marketing--row">
+                                <td class="paulina-marketing--cell">
+                                    <p class="paulina-marketing--p">Insert text here</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="white-bg">
+                        <table class="martas-infrastructure inner-table">
+                            <tr class="martas-infrastructure--row">
+                                <td class="martas-infrastructure--cell">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span> Marta's infrastructure rundown</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr class="martas-infrastructure--row">
+                                <td class="martas-infrastructure--cell">
+                                    <p class="martas-infrastructure--p">Despite the incidents, we have been doing some important work:</p>
+                                    <ul>
+                                        <li>Change the text here and clone this item.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="white-bg">
+                        <table class="paolassupport inner-table">
+                            <tr class="paolassupport">
+                                <td class="paolassupport--cell">
+                                    <h1 class="title">
+                                        <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                            class="title--img"
+                                            alt="" />
+                                        <span>  Paola's support summary</span>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr class="paolassupport">
+                                <td class="paolassupport--cell">
+                                    <p class="paolassupport--p">Insert text here</p>
+                                    <img src="//cdn2.hubspot.net/hubfs/2612720/August%20Support%201.png" alt="" />
+                                    <ul>
+                                        <li>Insert text here</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="darkgray-bg">
+                    <td>
+                        <table class="inner-table template-footer">
+                            <tr class="template-footer--row">
+                                <td class="template-footer--cell">
+                                    <table class="template-wrapper">
+                                        <tr class="template-wrapper--row">
+                                            <td class="template-wrapper--cell" valign="top">
+                                                <table width="100%" class="footer-info">
+                                                    <tr>
+                                                        <td class="arrow-icon" valign="top">
+                                                            <img class="arrow-icon--img" height="20" src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+                                                                width="20">
+                                                        </td>
+                                                        <td class="footer-info--cell" valign="top">
+                                                            <p class="template-footer--p">+44 (0)203 743 8016</p>
+                                                            <p class="template-footer--p">
+                                                                <a mailto="info@infomentum.co.uk" class="link">info@infomentum.co.uk</a>
+                                                            </p>
+                                                            <div>
+                                                                <a class="linkedin social-icon" href="https://www.linkedin.com/company/558453" style="">
+                                                                    <img height="25" 
+                                                                        src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/linkedin_icon.png" 
+                                                                        class="social-icon--img"
+                                                                        width="25">
+                                                                </a>
+                                                                <a class="twitter social-icon" href="https://twitter.com/infomentum" style="">
+                                                                    <img height="25" 
+                                                                        src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/twitter_icon-1.png" 
+                                                                        class="social-icon--img"
+                                                                        width="25">
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="template-wrapper--cell" valign="top">
+                                                <table width="100%" class="footer-info">
+                                                    <tr>
+                                                        <td class="arrow-icon" valign="top">
+                                                            <img src="//cdn2.hubspot.net/hubfs/2612720/Newsletter%20Assets/green_chevron.png" 
+                                                                class="arrow-icon--img"
+                                                                height="20" 
+                                                                width="20">
+                                                        </td>
+                                                        <td class="footer-info--cell" valign="top">
+                                                            <p class="template-footer--p">Infomentum, Dawson House, 5 Jewry Street, London EC3N 2EX</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="center footer--p">
+                            <span style="font-family:trebuchet ms,helvetica,sans-serif; font-size:10pt;">If
+                                    you have any updates for the September newsletter, please send them to Paulina
+                                    by 7 September.</span>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <p id="footer">
+                {{ site_settings.company_name }}&nbsp; {{ site_settings.company_street_address_1 }}&nbsp; {{ site_settings.company_street_address_2
+                }}&nbsp; {{ site_settings.company_city }}&nbsp; {{ site_settings.company_state }}&nbsp; {{ site_settings.company_zip
+                }}&nbsp; {{ site_settings.company_country }}&nbsp;
+                <br> You received this email because you are subscribed to {{ subscription_name }} from {{ site_settings.company_name
+                }}.
+                <br> Update your <a class="hubspot-mergetag" data-unsubscribe="true" href="{{ unsubscribe_link }}">email preferences</a>
+                to choose the types of emails you receive.
+                <br>
+                <a class="hubspot-mergetag" data-unsubscribe="true" href="{{ unsubscribe_link_all }}">Unsubscribe from all future
+                    emails
+                </a>
+            </p>
+
+            <style>
+                body{
+                    font-family: 'Trebuchet MS', sans-serif; 
+                    height: 100%; 
+                    margin: 0; 
+                    padding: 0; 
+                    width: 100%;
+                }
+                #bodyTable{
+                    border-collapse: collapse; 
+                    margin: 0; 
+                    padding: 0; 
+                    width: 100%;
+                }
+                .align-right{
+                    text-align: right;
+                }
+                .inner-table{
+                    width: 100%;
+                    max-width: 630px; 
+                    margin: auto; 
+                    border-collapse: collapse;
+                }
+                .arrow-icon{
+                    padding: 0 20px; 
+                    padding-left: 0; 
+                    padding-right: 0; 
+                    width: 6%;
+                    vertical-align: top;
+                }
+                .arrow-icon--img{
+                    border: 0px; 
+                    height: 20px; 
+                    line-height: 100%; 
+                    outline: none; 
+                    width: 20px;
+                }
+                .view-in-browser{
+                    padding: 10px;
+                }
+                .view-in-browser--link{
+                    color: #5c5c5c; 
+                    font-size: 11px;
+                }
+                .middle-header--td-left,
+                .middle-header--td-right{
+                    padding: 10px 0 20px;
+                }
+                .middle-header--td-right{
+                    text-align: right;
+                }
+                .middle-header--logo{
+                    border: 0px; 
+                    height: 67px; 
+                    line-height: 100%; 
+                    outline: none; 
+                    text-decoration: none; 
+                    width: 252px;
+                }
+                .middle-header--oracle{
+                    border: 0px; 
+                    height: 30px; 
+                    line-height: 100%; 
+                    outline: none; 
+                    text-decoration: none; 
+                    width: 210px;
+                }
+                .lower-header--cell{
+                    padding-bottom: 20px; 
+                }
+                .lower-header--p,
+                .client-updates--p,
+                .mollys-corner--p,
+                .paulina-marketing--p,
+                .martas-infrastructure--p,
+                .template-footer--p,
+                .paolassupport--p{
+                    line-height: 1.6em; 
+                    font-family:'Trebuchet MS', sans-serif; 
+                    font-size: 10pt;
+                }
+                .client-updates--table{
+                    width: 100%; 
+                    border-collapse: collapse; 
+                    margin: auto;
+                    margin-top: 20px
+                }
+                .client-updates--logo-cell{
+                    vertical-align: top; 
+                    padding: 0 10px 0 0; 
+                    border-bottom: 1px solid rgb(207, 207, 207); 
+                }
+                .client-updates--logo-img{
+                    width: 150px; 
+                    height: auto;
+                }
+                .client-updates--description{
+                    width: 100%; 
+                    border-bottom: 1px solid rgb(207, 207, 207); 
+                    vertical-align: top;
+                }
+                .client-updates--title,
+                .mollys-corner--title{
+                    color: rgb(75, 162, 28); 
+                    font-size: 1.4em; 
+                    line-height: 1.4em; 
+                    margin: 0px 0px 10px;
+                }
+                .sup-content,
+                .mollys-corner,
+                .paulina-marketing,
+                .martas-infrastructure,
+                .paolassupport{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                .martas-infrastructure--cell ul,
+                .paolassupport--cell ul{
+                    font-size: 10pt;
+                }
+
+                .mollys-corner img,
+                .paulina-marketing img,
+                .martas-infrastructure img,
+                .paolassupport img{
+                    max-width: 100%;
+                }
+                .template-footer--cell{
+                    padding: 0 20px;
+                    width: 50%;
+                    color: #f3f3f3;
+                }
+                .template-footer--p{
+                    color: #f3f3f3;
+                    margin-top: 0 !important;
+                }
+                .social-icon{
+                    color: #f3f3f3;
+                    margin-right: 5px;
+                    display: inline-block;
+                }
+                .social-icon--img{
+                    border: 0px; 
+                    height: 25px; 
+                    line-height: 100%; 
+                    outline: none; 
+                    text-decoration: none; 
+                    width: 25px;
+                }
+                .footer--p{
+                    text-align: center;
+                    color: #f3f3f3;
+                    width: 100%;
+                    max-width: 630px; 
+                    margin: auto;
+                    font-size: .8rem;
+                    margin-bottom: 20px;
+                }
+                .template-wrapper{
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .template-wrapper--cell{
+                    padding: 0 20px; 
+                    padding-bottom: 20px; 
+                    padding-left: 0; 
+                    padding-right: 10px; 
+                    padding-top: 30px; 
+                    width: 50%;
+                    vertical-align: top;
+                }
+                .footer-info{
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .footer-info--cell{
+                    padding: 0 20px; 
+                    width: 100%;
+                    vertical-align: top;
+                }
+                #footer{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+                .gradient-bg{
+                    background: linear-gradient(#fff, #cdd7e8 20%); 
+                    background-color: #cdd7e8; 
+                }
+                .white-bg{
+                    background: #fff;
+                }
+                .gray-bg{
+                    background: #f3f3f3;
+                }
+                .darkgray-bg{
+                    background: rgb(92, 92, 92);
+                }
+                .link {
+                    color: rgb(75, 162, 28);
+                }
+                .title{
+                    color: rgb(75, 162, 28); 
+                    font-family: 'Museo 300', 'Trebuchet MS', sans-serif; 
+                    font-weight: normal; 
+                    line-height: 1.4em; 
+                    margin-bottom: 10px;
+                }
+                .title--img{
+                    border: 0px; 
+                    height: 25px; 
+                    line-height: 100%; 
+                    margin-right: 10px; 
+                    outline: none; 
+                    text-decoration: none; 
+                    width: 25px;
+                }
+                .row{
+                    vertical-align:top;
+                }
+                .main-body{
+                    min-height:150px;
+                    padding: 5px;
+                    width:100%;
+                    height:100%;
+                    background-color:rgb(234, 236, 237);
+                    font-family: 'Trebuchet MS', sans-serif;
+                    font-size: .8em;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                }
+                .c926{
+                    color:rgb(158, 83, 129);
+                    width:100%;
+                    font-size:50px;
+                }
+                .cell.c849{
+                    width:11%;
+                }
+                .c1144{
+                    padding: 10px;
+                    font-size:17px;
+                    font-weight: 300;
+                }
+                .card{
+                    min-height:150px;
+                    padding: 5px;
+                    margin-bottom:20px;
+                    height:0px;
+                }
+                .card-cell{
+                    background-color:rgb(255, 255, 255);
+                    overflow:hidden;
+                    border-radius: 3px;
+                    padding: 0;
+                    text-align:center;
+                }
+                .card.sector{
+                    background-color:rgb(255, 255, 255);
+                    border-radius: 3px;
+                    border-collapse:separate;
+                }
+                .c1271{
+                    width:100%;
+                    margin: 0 0 15px 0;
+                    font-size:50px;
+                    color:rgb(120, 197, 214);
+                    line-height:250px;
+                    text-align:center;
+                }
+                .table100{
+                    width:100%;
+                }
+                .c1357{
+                    min-height:150px;
+                    padding: 5px;
+                    margin: auto;
+                    height:0px;
+                }
+                .darkerfont{
+                    color:rgb(65, 69, 72);
+                }
+                .button{
+                    font-size:12px;
+                    padding: 10px 20px;
+                    background-color:rgb(75, 162, 28);
+                    color:rgb(255, 255, 255);
+                    text-align:center;
+                    border-radius: 3px;
+                    font-weight:300;
+                }
+                .table100.c1437{
+                    text-align:left;
+                }
+                .cell.cell-bottom{
+                    text-align:center;
+                    height:51px;
+                }
+                .card-title{
+                    font-size:25px;
+                    font-weight:300;
+                    color:rgb(68, 68, 68);
+                }
+                .card-content{
+                    font-size:13px;
+                    line-height:20px;
+                    color:rgb(111, 119, 125);
+                    padding: 10px 20px 0 20px;
+                    vertical-align:top;
+                }
+                .container{
+                    font-family: Helvetica, serif;
+                    min-height:150px;
+                    padding: 5px;
+                    margin:auto;
+                    height:0px;
+                    width:90%;
+                    max-width:550px;
+                }
+                .cell.c856{
+                    vertical-align:middle;
+                }
+                .container-cell{
+                    vertical-align:top;
+                    font-size:medium;
+                    padding-bottom:50px;
+                }
+                .c1790{
+                    min-height:150px;
+                    padding: 5px;
+                    margin:auto;
+                    height:0px;
+                }
+                .table100.c1790{
+                    min-height:30px;
+                    border-collapse:separate;
+                    margin: 0 0 10px 0;
+                }
+                .browser-link{
+                    font-size:12px;
+                }
+                .top-cell{
+                    text-align:right;
+                    color:rgb(152, 156, 165);
+                }
+                .table100.c1357{
+                    margin: 0;
+                    border-collapse:collapse;
+                }
+                .c1769{
+                    width:30%;
+                }
+                .c1776{
+                    width:70%;
+                }
+                .c1766{
+                    margin: 0 auto 10px 0;
+                    padding: 5px;
+                    width:100%;
+                    min-height:30px;
+                }
+                .cell.c1769{
+                    width:11%;
+                }
+                .cell.c1776{
+                    vertical-align:middle;
+                }
+                .c1542{
+                    margin: 0 auto 10px auto;
+                    padding:5px;
+                    width:100%;
+                }
+                .card-footer{
+                    padding: 20px 0;
+                    text-align:center;
+                }
+                .c2280{
+                    height:150px;
+                    margin:0 auto 10px auto;
+                    padding:5px 5px 5px 5px;
+                    width:100%;
+                }
+                .c2421{
+                    padding:10px;
+                }
+                .c2577{
+                    padding:10px;
+                }
+                .footer{
+                    margin-top: 50px;
+                    color:rgb(152, 156, 165);
+                    text-align:center;
+                    font-size:11px;
+                    padding: 5px;
+                }
+                .quote {
+                    font-style: italic;
+                }
+                .list-item{
+                    height:auto;
+                    width:100%;
+                    margin: 0 auto 10px auto;
+                    padding: 5px;
+                }
+                .list-item-cell{
+                    background-color:rgb(255, 255, 255);
+                    border-radius: 3px;
+                    overflow: hidden;
+                    padding: 0;
+                }
+                .list-cell-left{
+                    width:30%;
+                    padding: 0;
+                }
+                .list-cell-right{
+                    width:70%;
+                    color:rgb(111, 119, 125);
+                    font-size:13px;
+                    line-height:20px;
+                    padding: 10px 20px 0px 20px;
+                }
+                .list-item-content{
+                    border-collapse: collapse;
+                    margin: 0 auto;
+                    padding: 5px;
+                    height:150px;
+                    width:100%;
+                }
+                .list-item-image{
+                    color:#4ba21c;
+                    font-size:45px;
+                    width: 100%;
+                }
+                .grid-item-image{
+                    line-height:150px;
+                    font-size:50px;
+                    color:rgb(120, 197, 214);
+                    margin-bottom:15px;
+                    width:100%;
+                }
+                .grid-item-row {
+                    margin: 0 auto 10px;
+                    padding: 5px 0;
+                    width: 100%;
+                }
+                .grid-item-card {
+                    width:100%;
+                    padding: 5px 0;
+                    margin-bottom: 10px;
+                }
+                .grid-item-card-cell{
+                    background-color:rgb(255, 255, 255);
+                    overflow: hidden;
+                    border-radius: 3px;
+                    text-align:center;
+                    padding: 0;
+                }
+                .grid-item-card-content{
+                    font-size:13px;
+                    color:rgb(111, 119, 125);
+                    padding: 0 10px 20px 10px;
+                    width:100%;
+                    line-height:20px;
+                }
+                .grid-item-cell2-l{
+                    vertical-align:top;
+                    padding-right:10px;
+                    width:50%;
+                }
+                .grid-item-cell2-r{
+                    vertical-align:top;
+                    padding-left:10px;
+                    width:50%;
+                }                
+            </style>
+        </div>
+        
+        <form id="test-form" class="test-form" action="http://grapes.16mb.com/s" method="POST" style="display:none">
+            <div class="putsmail-c">
+                <a href="https://putsmail.com/" target="_blank">
+                <img src="//via.placeholder.com/50x50" style="opacity:0.85;" />
+                </a>
+                <div class="gjs-sm-property" style="font-size: 10px">
+                    Test delivering offered by <a class="nl-link" href="https://litmus.com/" target="_blank">Litmus</a> with <a class="nl-link" href="https://putsmail.com/" target="_blank">Putsmail</a>
+                    <span class="form-status" style="opacity: 0">
+                    <i class="fa fa-refresh anim-spin" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="gjs-sm-property">
+                <div class="gjs-field">
+                    <span id="gjs-sm-input-holder">
+                    <input type="email" name="email" placeholder="Email" required>
+                    </span>
+                </div>
+            </div>
+            <div class="gjs-sm-property">
+                <div class="gjs-field">
+                    <span id="gjs-sm-input-holder">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    </span>
+                </div>
+            </div>
+            <input type="hidden" name="body">
+            <button class="gjs-btn-prim gjs-btn-import" style="width: 100%">SEND</button>
+        </form>
+
+        <script type="text/javascript">
+            var host = '//cdn2.hubspot.net/';
+            var images = [
+                host + "hubfs/2612720/Newsletter%20Assets/infomentum_logo.png",
+                host + "hubfs/2612720/Newsletter%20Assets/oracle-logo.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Motability.jpg",
+                host + "hubfs/2612720/BAE%20Hawk.png",
+                host + "hubfs/2612720/1024px-The_Prince's_Trust.jpg",
+                host + "hubfs/2612720/PPL_Large%20200X200.jpg",
+                host + "hubfs/2612720/Newsletter%20Assets/IQPC_acronym_only.png",
+                host + "hubfs/2612720/BAE%20Systems.jpg",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/August%20Support%201.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png",
+                host + "hubfs/2612720/Newsletter%20Assets/linkedin_icon.png",
+                host + "hubfs/2612720/Newsletter%20Assets/twitter_icon-1.png",
+                host + "hubfs/2612720/Newsletter%20Assets/green_chevron.png"
+            ];
+            
+            // Set up GrapesJS editor with the Newsletter plugin
+            var editor = grapesjs.init({
+                height: '100%',
+                //noticeOnUnload: 0,
+                storageManager:{
+                    autoload: 0,
+                },
+                assetManager: {
+                    assets: images,
+                    upload: 0,
+                    uploadText: 'Uploading is not available in this demo',
+                },
+                container : '#gjs',
+                fromElement: true,
+                plugins: ['gjs-preset-newsletter'],
+                pluginsOpts: {
+                    'gjs-preset-newsletter': {
+                        modalLabelImport: 'Paste all your code here below and click import',
+                        modalLabelExport: 'Copy the code and use it wherever you want',
+                        codeViewerTheme: 'material',
+                        //defaultTemplate: templateImport,
+                        importPlaceholder: '<table class="table"><tr><td class="cell">Hello world!</td></tr></table>',
+                        cellStyle: {
+                            'font-size': '12px',
+                            'font-weight': 300,
+                            'vertical-align': 'top',
+                            color: 'rgb(111, 119, 125)',
+                            margin: 0,
+                            padding: 0,
+                        }
+                    }
+                }
+            });
+            
+            
+            // Let's add in this demo the possibility to test our newsletters
+            var mdlClass = 'gjs-mdl-dialog-sm';
+            var pnm = editor.Panels;
+            var cmdm = editor.Commands;
+            var testContainer = document.getElementById("test-form");
+            var contentEl = testContainer.querySelector('input[name=body]');
+            var md = editor.Modal;
+            cmdm.add('send-test', {
+                run(editor, sender) {
+                    sender.set('active', 0);
+                    var modalContent = md.getContentEl();
+                    var mdlDialog = document.querySelector('.gjs-mdl-dialog');
+                    var cmdGetCode = cmdm.get('gjs-get-inlined-html');
+                    contentEl.value = cmdGetCode && cmdGetCode.run(editor);
+                    mdlDialog.className += ' ' + mdlClass;
+                    testContainer.style.display = 'block';
+                    md.setTitle('Test your Newsletter');
+                    md.setContent('');
+                    md.setContent(testContainer);
+                    md.open();
+                    md.getModel().once('change:open', function() {
+                        mdlDialog.className = mdlDialog.className.replace(mdlClass, '');
+                        //clean status
+                    })
+                }
+            });
+            pnm.addButton('options', {
+                id: 'send-test',
+                className: 'fa fa-paper-plane',
+                command: 'send-test',
+                attributes: {
+                    'title': 'Test Newsletter',
+                    'data-tooltip-pos': 'bottom',
+                },
+            });
+            
+            //fa fa-refresh
+            var statusFormElC = document.querySelector('.form-status');
+            var statusFormEl = document.querySelector('.form-status i');
+            var ajaxTest = ajaxable(testContainer).
+                onStart(function(){
+                    statusFormEl.className = 'fa fa-refresh anim-spin';
+                    statusFormElC.style.opacity = '1';
+                    statusFormElC.className = 'form-status';
+                })
+                .onResponse(function(res){
+                    if (res.data) {
+                        statusFormElC.style.opacity = '0';
+                        statusFormEl.removeAttribute('data-tooltip');
+                        md.close();
+                    } else if(res.errors){
+                        statusFormEl.className = 'fa fa-exclamation-circle';
+                        statusFormEl.setAttribute('data-tooltip', res.errors);
+                        statusFormElC.className = 'form-status text-danger';
+                    }
+                });
+            
+            // Simple warn notifier
+            var origWarn = console.warn;
+            toastr.options = {
+                closeButton: true,
+                preventDuplicates: true,
+                showDuration: 250,
+                hideDuration: 150
+            };
+            console.warn = function (msg) {
+                toastr.warning(msg);
+                origWarn(msg);
+            };
+            
+            $(document).ready(function () {
+                // Beautify tooltips
+                $('*[title]').each(function () {
+                    var el = $(this);
+                    var title = el.attr('title').trim();
+                    if(!title)
+                        return;
+                    el.attr('data-tooltip', el.attr('title'));
+                    el.attr('title', '');
+                });
+            
+            });
+        </script>
+    </body>
+</html>

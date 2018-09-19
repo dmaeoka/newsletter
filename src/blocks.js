@@ -225,9 +225,9 @@ define(function() {
                     <img 
                     alt="Motability"
                     src="http://placehold.it/150x100/78c5d6/fff/"
-                    class="client-updates--logo-img"
                     vspace="0"
-                    width="140" />
+                    height="100"
+                    width="150" />
                 </td>
                 <td class="client-updates--description">
                     <h2 class="client-updates--title">Update here</h2>
